@@ -15,12 +15,20 @@
 	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <PackageTags>csharp;dotnet;netcore;net;aspnetcore;onion;architecture;generic;helpers;utils</PackageTags>
 	  <Version>1.0.0</Version>
+	  <PackageProjectUrl>https://github.com/sayeed1999/Sayeed.Generic.OnionArchitecture</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
