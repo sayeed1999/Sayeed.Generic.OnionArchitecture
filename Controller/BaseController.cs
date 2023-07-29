@@ -17,37 +17,42 @@ namespace Sayeed.Generic.OnionArchitecture.Controller
 
         // GET: api/<BaseController>
         [HttpGet]
-        public async Task<IEnumerable<T>> GetAllAsync([FromQuery]int page = 1, [FromQuery] int pageSize = 10)
+        public virtual async Task<ActionResult<IEnumerable<T>>> GetAllAsync([FromQuery]int page = 1, [FromQuery] int pageSize = 10)
         {
-            return await baseService.GetAllAsync(page, pageSize);
+            var res = await baseService.GetAllAsync(page, pageSize);
+            return Ok(res);
         }
 
         // GET api/<BaseController>/5
         [HttpGet("{id}")]
-        public async Task<T> GetById(int id)
+        public virtual async Task<ActionResult<T>> GetById(int id)
         {
-            return await baseService.FindByIdAsync(id);
+            var res = await baseService.FindByIdAsync(id);
+            return Ok(res);
         }
 
         // POST api/<BaseController>
         [HttpPost]
-        public async Task Add([FromBody] T body)
+        public virtual async Task<ActionResult> Add([FromBody] T body)
         {
-            await baseService.AddAsync(body);
+            var res = await baseService.AddAsync(body);
+            return Ok(res);
         }
 
         // PUT api/<BaseController>/5
         [HttpPut("{id}")]
-        public async Task UpdateById(int id, [FromBody] T body)
+        public virtual async Task<ActionResult> UpdateById(int id, [FromBody] T body)
         {
-            await baseService.UpdateByIdAsync(id, body);
+            var res = await baseService.UpdateByIdAsync(id, body);
+            return Ok(res);
         }
 
         // DELETE api/<BaseController>/5
         [HttpDelete("{id}")]
-        public async Task DeleteAsync(int id)
+        public virtual async Task<ActionResult> DeleteAsync(int id)
         {
-            await baseService.DeleteByIdAsync(id);
+            var res = await baseService.DeleteByIdAsync(id);
+            return Ok(res);
         }
     }
 }

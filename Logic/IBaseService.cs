@@ -12,11 +12,11 @@ namespace Sayeed.Generic.OnionArchitecture.Logic
 
         public Task<IEnumerable<T>> GetAllAsync(int page = 1, int pageSize = 10);
         public Task<T> FindByIdAsync(long id); // FindAsync() is only for PK's!
-        public Task AddAsync(T item);
-        public Task UpdateAsync(T item);
-        public Task UpdateByIdAsync(long id, T item);
-        public Task Delete(T item);
-        public Task DeleteByIdAsync(long id);
+        public Task<T> AddAsync(T item);
+        public Task<T> UpdateAsync(T item);
+        public Task<T> UpdateByIdAsync(long id, T item);
+        public Task<T> Delete(T item);
+        public Task<T> DeleteByIdAsync(long id);
 
     }
 }

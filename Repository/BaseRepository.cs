@@ -105,14 +105,15 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
             return await _dbSet.FindAsync(id);
         }
 
-        public virtual async Task AddAsync(T item)
+        public virtual async Task<T> AddAsync(T item)
         {
             item.GetType().GetProperty("Id")?.SetValue(item, 0); // setting the PK of the row as 0 when the PK is Id int
             await _dbSet.AddAsync(item);
             await _dbContext.SaveChangesAsync();
+            return item;
         }
 
-        public virtual async Task UpdateByIdAsync(long id, T item)
+        public virtual async Task<T> UpdateByIdAsync(long id, T item)
         {
             Type t = item.GetType();
             PropertyInfo prop = t.GetProperty("Id");
@@ -120,28 +121,30 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
 
             if (id != itemId) throw new Exception("Access restricted!");
 
-            await UpdateAsync(item);
+            return await UpdateAsync(item);
         }
 
-        public virtual async Task UpdateAsync(T item)
+        public virtual async Task<T> UpdateAsync(T item)
         {
             _dbSet.Update(item);
             await _dbContext.SaveChangesAsync();
+            return item;
         }
 
-        public virtual async Task DeleteAsync(T item)
+        public virtual async Task<T> DeleteAsync(T item)
         {
             _dbSet.Remove(item);
             await _dbContext.SaveChangesAsync();
+            return item;
         }
 
-        public virtual async Task DeleteByIdAsync(long id)
+        public virtual async Task<T> DeleteByIdAsync(long id)
         {
             var itemToBeDeleted = await _dbSet.FindAsync(id);
 
             if (itemToBeDeleted == null) throw new Exception("Item not found!");
 
-            await DeleteAsync(itemToBeDeleted);
+            return await DeleteAsync(itemToBeDeleted);
         }
 
         public IQueryable<T> FromSql(string rawsql, params SqlParameter[] parameters)

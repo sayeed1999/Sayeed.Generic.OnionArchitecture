@@ -32,29 +32,29 @@ namespace Sayeed.Generic.OnionArchitecture.Logic
             return await _repository.FindByIdAsync(id);
         }
 
-        public virtual async Task AddAsync(T item)
+        public virtual async Task<T> AddAsync(T item)
         {
-            await _repository.AddAsync(item);
+            return await _repository.AddAsync(item);
         }
 
-        public virtual async Task UpdateByIdAsync(long id, T item)
+        public virtual async Task<T> UpdateByIdAsync(long id, T item)
         {
-            await _repository.UpdateByIdAsync(id, item);
+            return await _repository.UpdateByIdAsync(id, item);
         }
 
-        public virtual async Task UpdateAsync(T item)
+        public virtual async Task<T> UpdateAsync(T item)
         {
-            await _repository.UpdateAsync(item);
+            return await _repository.UpdateAsync(item);
         }
 
-        public virtual async Task Delete(T item)
+        public virtual async Task<T> Delete(T item)
         {
-            await _repository.DeleteAsync(item);
+            return await _repository.DeleteAsync(item);
         }
 
-        public virtual async Task DeleteByIdAsync(long id)
+        public virtual async Task<T> DeleteByIdAsync(long id)
         {
-            await _repository.DeleteByIdAsync(id);
+            return await _repository.DeleteByIdAsync(id);
         }
 
     }

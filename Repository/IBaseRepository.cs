@@ -30,11 +30,11 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
                                                 int page = 1, 
                                                 int pageSize = 10);
         public Task<T> FindByIdAsync(long id); // FindAsync() is only for PK's!
-        public Task AddAsync(T item);
-        public Task UpdateAsync(T item);
-        public Task UpdateByIdAsync(long id, T item);
-        public Task DeleteAsync(T item);
-        public Task DeleteByIdAsync(long id);
+        public Task<T> AddAsync(T item);
+        public Task<T> UpdateAsync(T item);
+        public Task<T> UpdateByIdAsync(long id, T item);
+        public Task<T> DeleteAsync(T item);
+        public Task<T> DeleteByIdAsync(long id);
 
         public Task<int> SaveChangesAsync();
 
