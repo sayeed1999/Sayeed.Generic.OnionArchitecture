@@ -4,6 +4,17 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <Title>Sayeed.Generic.OnionArchitecture</Title>
+	  <Authors>Md. Sayeed Rahman</Authors>
+	  <Description>This project contains several layers of onion architecture in .NET that can be embedded into any ASP.NET project.</Description>
+	  <RepositoryUrl>https://github.com/sayeed1999/Sayeed.Generic.OnionArchitecture</RepositoryUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	  <PackageTags>csharp;dotnet;netcore;net;aspnetcore;onion;architecture;generic;helpers;utils</PackageTags>
+	  <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
