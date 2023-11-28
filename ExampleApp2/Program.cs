@@ -1,4 +1,4 @@
-using ExampleApp1;
+using ExampleApp2;
 using Sayeed.Generic.OnionArchitecture;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Registers SQLServer as database provider with generic repo & logic layer
+// Registers PostgreSQL as database provider with generic repo & logic layer
 builder.Services
-    .RegisterSqlServer<AppDbContext>(builder.Configuration)
+    .RegisterPostgreSql<AppDbContext>(builder.Configuration)
     .RegisterGenericRepositoryLayer()
     .RegisterGenericLogicLayer();
 
