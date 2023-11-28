@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sayeed.Generic.OnionArchitecture.Entity;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -7,7 +8,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
 {
     // TODO: I want to make it abstract, but failing to do it!
     public class BaseRepository<T> : IBaseRepository<T> 
-        where T : class
+        where T : BaseEntity
     {
 
         #region initializations & declarations
@@ -107,7 +108,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
 
         public virtual async Task<T> AddAsync(T item)
         {
-            item.GetType().GetProperty("Id")?.SetValue(item, 0); // setting the PK of the row as 0 when the PK is Id int
+            //item.GetType().GetProperty("Id")?.SetValue(item, 0); // setting the PK of the row as 0 when the PK is Id int
             await _dbSet.AddAsync(item);
             await _dbContext.SaveChangesAsync();
             return item;
@@ -115,9 +116,10 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
 
         public virtual async Task<T> UpdateByIdAsync(long id, T item)
         {
-            Type t = item.GetType();
-            PropertyInfo prop = t.GetProperty("Id");
-            long itemId = (long)prop.GetValue(item);
+            //Type t = item.GetType();
+            //PropertyInfo prop = t.GetProperty("Id");
+            //long itemId = (long)prop.GetValue(item);
+            long itemId = item.Id;
 
             if (id != itemId) throw new Exception("Access restricted!");
 
