@@ -37,9 +37,4 @@ public static class DependencyInjection
         return services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 
     }
-
-    public static IServiceCollection RegisterGenericControllerLayer(this IServiceCollection services)
-    {
-        return services.AddScoped(typeof(IBaseController<>), typeof(BaseController<>));
-    }
 }

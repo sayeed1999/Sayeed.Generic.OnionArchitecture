@@ -13,8 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .RegisterSqlServer<AppDbContext>(builder.Configuration)
     .RegisterGenericRepositoryLayer()
-    .RegisterGenericLogicLayer()
-    .RegisterGenericControllerLayer();
+    .RegisterGenericLogicLayer();
 
 var app = builder.Build();
 
