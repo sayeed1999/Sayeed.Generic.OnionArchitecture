@@ -6,6 +6,26 @@ Welcome to Sayeed.Generic.OnionArchitecture, a versatile class library that impl
 
 Onion Architecture is a software architectural pattern that aims to create a clear separation of concerns in an application. The architecture is built around the core concept of placing the most important business logic and entities at the center (the core), while surrounding it with layers that decrease in importance. These layers include the Domain/Business Layer, Data Access Layer, and Presentation/Controller Layer.
 
+## Multi-Database Support
+
+Sayeed.Generic.OnionArchitecture comes with two database provider integration support seamlessly.
+
+- **SQL Server Integration**: Integrate the following code in `Program.cs` to inject SQL Server as the database provider.
+  ```
+  builder.Services
+    .RegisterSqlServer<AppDbContext>(builder.Configuration)
+    .RegisterGenericRepositoryLayer()
+    .RegisterGenericLogicLayer();
+  ```
+
+- **PostgreSQL Integration**: Integrate the following code in `Program.cs` to inject PostgreSQL as the database provider.
+  ```
+  builder.Services
+    .RegisterPostgreSql<AppDbContext>(builder.Configuration)
+    .RegisterGenericRepositoryLayer()
+    .RegisterGenericLogicLayer();
+  ```
+
 ## Key Features
 
 - **Generic Data Layer**: The data layer in this library is designed to be generic, allowing you to easily perform CRUD operations on different types of entities without writing repetitive code.
