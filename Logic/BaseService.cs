@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sayeed.Generic.OnionArchitecture.Repository;
+﻿using Sayeed.Generic.OnionArchitecture.Repository;
 
 namespace Sayeed.Generic.OnionArchitecture.Logic
 {
-    public class BaseService<T> : IBaseService<T> 
+    public class BaseService<T> : IBaseService<T>
         where T : class
     {
         protected IBaseRepository<T> _repository;

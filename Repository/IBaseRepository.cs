@@ -27,7 +27,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
         public Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null,
                                                 Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                                 List<Expression<Func<T, object>>> includes = null,
-                                                int page = 1, 
+                                                int page = 1,
                                                 int pageSize = 10);
         public Task<T> FindByIdAsync(long id); // FindAsync() is only for PK's!
         public Task<T> AddAsync(T item);

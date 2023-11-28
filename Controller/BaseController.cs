@@ -17,7 +17,7 @@ namespace Sayeed.Generic.OnionArchitecture.Controller
 
         // GET: api/<BaseController>
         [HttpGet]
-        public virtual async Task<ActionResult<IEnumerable<T>>> GetAllAsync([FromQuery]int page = 1, [FromQuery] int pageSize = 10)
+        public virtual async Task<ActionResult<IEnumerable<T>>> GetAllAsync([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             var res = await baseService.GetAllAsync(page, pageSize);
             return Ok(res);

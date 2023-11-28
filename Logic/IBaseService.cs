@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sayeed.Generic.OnionArchitecture.Logic
+﻿namespace Sayeed.Generic.OnionArchitecture.Logic
 {
     public interface IBaseService<T> where T : class
     {

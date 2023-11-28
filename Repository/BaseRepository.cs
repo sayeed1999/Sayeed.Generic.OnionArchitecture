@@ -2,12 +2,11 @@
 using Sayeed.Generic.OnionArchitecture.Entity;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
-using System.Reflection;
 
 namespace Sayeed.Generic.OnionArchitecture.Repository
 {
     // TODO: I want to make it abstract, but failing to do it!
-    public class BaseRepository<T> : IBaseRepository<T> 
+    public class BaseRepository<T> : IBaseRepository<T>
         where T : BaseEntity
     {
 
@@ -24,9 +23,9 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
 
         #endregion
 
-        public DbSet<T> DbSet 
-        { 
-            get { return _dbSet; } 
+        public DbSet<T> DbSet
+        {
+            get { return _dbSet; }
         }
 
         /// <summary>
