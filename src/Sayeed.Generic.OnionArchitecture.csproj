@@ -14,7 +14,7 @@
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <PackageTags>csharp;dotnet;netcore;net;aspnetcore;onion;architecture;generic;helpers;utils</PackageTags>
-	  <Version>1.0.1</Version>
+	  <Version>2.0.0</Version>
 	  <PackageProjectUrl>https://github.com/sayeed1999/Sayeed.Generic.OnionArchitecture</PackageProjectUrl>
   </PropertyGroup>
 
