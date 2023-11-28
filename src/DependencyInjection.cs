@@ -15,6 +15,8 @@ public static class DependencyInjection
         services.AddDbContext<T>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
+        services.AddScoped<DbContext, T>();
+
         return services;
     }
 
@@ -23,6 +25,8 @@ public static class DependencyInjection
     {
         services.AddDbContext<T>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped<DbContext, T>();
 
         return services;
     }
