@@ -46,7 +46,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
             int page = 1,
             int pageSize = 10)
         {
-            IQueryable<T> query = this.PrepareQuery(filter, orderBy, includes);
+            IQueryable<T> query = PrepareQuery(filter, orderBy, includes);
             return await query
                         .Skip((page - 1) * pageSize)
                         .Take(pageSize)
@@ -58,7 +58,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             List<Expression<Func<T, object>>> includes = null)
         {
-            IQueryable<T> query = this.PrepareQuery(filter, orderBy, includes);
+            IQueryable<T> query = PrepareQuery(filter, orderBy, includes);
             return await query.FirstOrDefaultAsync();
         }
 
@@ -67,7 +67,7 @@ namespace Sayeed.Generic.OnionArchitecture.Repository
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             List<Expression<Func<T, object>>> includes = null)
         {
-            IQueryable<T> query = this.PrepareQuery(filter, orderBy, includes);
+            IQueryable<T> query = PrepareQuery(filter, orderBy, includes);
             return await query.SingleOrDefaultAsync();
         }
 
