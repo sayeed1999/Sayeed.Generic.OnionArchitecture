@@ -12,10 +12,13 @@ namespace ExampleApp1.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly AppDbContext _appDbContext;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,
+            AppDbContext appDbContext)
         {
             _logger = logger;
+            _appDbContext = appDbContext;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
